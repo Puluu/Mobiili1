@@ -5,4 +5,6 @@
     <string name="textarvo">jjjj</string>
     <string name="editText">Teksti</string>
     <string name="editText2">Teksti</string>
+    <string name="button_back">Back</string>
+    <string name="textarvo2">Text</string>
 </resources>
