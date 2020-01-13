@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_save;
     private Button button_done;
     private EditText editText2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
         this.button_done = findViewById(R.id.button4);
         this.editText2 = findViewById(R.id.editText);
 
+
+
         this.button_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, Main2Activity.class);
-                myIntent.putExtra("items", editText2.getText());
+
 
                 if(editText2.getText().length()<= 3 || editText2.getText().length() > 15){
                     Context context = getApplicationContext();
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     toast.show();
 
 
+
+
                 }
             }
         });
@@ -60,10 +66,17 @@ public class MainActivity extends AppCompatActivity {
         this.button_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ArrayList<String> itemList = new ArrayList<String>();
+                itemList.add(editText2.getText().toString());
+
                 Intent myIntent = new Intent(MainActivity.this, Main2Activity.class);
+                myIntent.putExtra("lista", itemList);
                 startActivity(myIntent);
+
             }
         });
 
     }
+
+
 }

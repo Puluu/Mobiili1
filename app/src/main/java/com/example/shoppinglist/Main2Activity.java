@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class Main2Activity extends AppCompatActivity {
 
     private Button button_back;
@@ -21,9 +23,12 @@ public class Main2Activity extends AppCompatActivity {
         this.button_back = findViewById(R.id.button);
         this.textarvo2 = findViewById(R.id.textView2);
 
-        Intent myIntent = getIntent();
-        String items = myIntent.getStringExtra("items");
-        textarvo2.setText(items);
+        ArrayList<String> itemList = (ArrayList<String>)
+                getIntent().getSerializableExtra("lista");
+        textarvo2.setText(String.valueOf(itemList));
+
+
+
 
 
         this.button_back.setOnClickListener(new View.OnClickListener() {
