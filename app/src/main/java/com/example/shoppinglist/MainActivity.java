@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(editText2.getText().length()<= 3 || editText2.getText().length() > 15){
                     Context context = getApplicationContext();
-                    CharSequence text = "Liian lyhyt tai pitkä teksti!";
+                    CharSequence text = "Liian lyhyt tai pitkä teksti!(min 3, max 15 kirjainta";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
