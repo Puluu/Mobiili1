@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private Button button_done;
     private EditText editText2;
 
+    public ArrayList<String> itemList = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
-
-
+                    itemList.add(editText2.getText().toString());
 
                 }
             }
@@ -66,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
         this.button_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ArrayList<String> itemList = new ArrayList<String>();
-                itemList.add(editText2.getText().toString());
 
                 Intent myIntent = new Intent(MainActivity.this, Main2Activity.class);
                 myIntent.putExtra("lista", itemList);
